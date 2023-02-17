@@ -1,4 +1,5 @@
 <div class="body-nested-step">
+
   <div class="content-progress">
     <!-- Componente barra de progreso -->
     <app-step-progress-bar
@@ -19,10 +20,11 @@
         (keyup.enter)="setCurrent()"
       /> -->
       <!-- <button (click)="setCurrent()">Set step</button> -->
-      <button (click)="previous()">Previous</button>
-      <button (click)="next()">Next1</button>
+      <button class="ss-second-btn" (click)="previous()">Previous</button>
+      <button class="ss-first-btn" (click)="next()">Next1</button>
     </div>
   </div>
+  
 </div>
 <!-- <app-step-progress-bar
   [steps]="steps"
