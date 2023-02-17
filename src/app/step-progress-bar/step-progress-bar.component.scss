@@ -25,11 +25,22 @@
       list-style: none;
       box-sizing: border-box;
       background: red;
-      .menu {
+      padding: 10px;
+      .step-circle-container {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background: fuchsia;
+      }
+
+      /* ####### sub stepper ####### */
+      /* .menu {
         position: relative;
         padding-top: 0;
         padding-bottom: 0;
-        background: green;
+        background: rgba(0, 128, 0, 0.219);
 
         &.collapsed > ul {
           display: none;
@@ -51,15 +62,16 @@
         }
 
         .menu-heading {
-          display: inline-block;
+          * display: inline-block;
           box-sizing: border-box;
           width: 100%;
-          padding: 0.5rem 1rem 0.5rem 2rem;
+          padding: 0.5rem 1rem 0.5rem 2rem; *
+          background: blue;
 
-          &:hover {
+          * &:hover {
             background-color: #eee;
             cursor: pointer;
-          }
+          } *
         }
 
         .toggle-button {
@@ -67,7 +79,8 @@
           top: 0.5rem;
           right: 0.5rem;
         }
-      }
+      } */
+      /* ####### sub stepper ####### */
 
       ul {
         list-style: none;
@@ -94,41 +107,56 @@
   font-family: Arial;
 }
 
+/* ### Cuando el paso queda completo ### */
 .pei-check-mark-circle::before {
   content: '✓';
-  display: inline-block;
+  //display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   vertical-align: text-bottom;
   text-align: center;
-  width: 1em;
-  height: 1em;
-  border-radius: 0.5em;
-  background-color: #d9534f;
-  color: #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #5451f1;
+  //opcional
+  border: 3px solid #5451f1;
 }
 
 .pei-circle::before {
-  content: '';
-  display: inline-block;
+  content: '✓';
+  color: #5451f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
-  width: 1em;
-  height: 1em;
-  border-radius: 0.5em;
-  background-color: #d9534f;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #28d6ee;
 }
 
 .pei-ring::before {
   content: '';
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
-  width: 1em;
-  height: 1em;
-  border-radius: 0.5em;
-  border: 0.125em solid #d9534f;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #999;
+  background: #fff;
 }
 
 .pei-chevron-up::before {
   content: '';
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   vertical-align: text-bottom;
   width: 0.625em;
@@ -142,7 +170,9 @@
 
 .pei-chevron-down::before {
   content: '';
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   width: 0.625em;
   height: 0.625em;

@@ -2,29 +2,30 @@
   <div class="progress-bar">
     <ul *ngIf="steps.length" class="wrapper">
       <!-- ########### Container Menu Nested Step ########### -->
-      <li *ngFor="let step of steps" [ngClass]="{ menu: step.children }">
+      <li class="step-circle-container" *ngFor="let step of steps">
+        <!-- propiedad li [ngClass]="{ menu: step.children }" -->
         <ng-container [ngSwitch]="step.state">
           <i *ngSwitchCase="'incomplete'" class="pei pei-ring"></i>
           <i *ngSwitchCase="'complete'" class="pei pei-check-mark-circle"></i>
           <i *ngSwitchCase="'current'" class="pei pei-circle"></i>
         </ng-container>
 
-        <span
+        <!-- <span
           [ngClass]="{ 'menu-heading': step.children }"
           (click)="toggleMenu($event)"
           >{{ step.text }}</span
-        >
+        > -->
 
-        <i
+        <!-- <i
           [ngClass]="{
             'toggle-button': true,
             pei: true,
             'pei-chevron-up': step.children
           }"
-        ></i>
+        ></i> -->
 
         <!-- ####### NESTED STEP ######## -->
-        <ul *ngIf="step.children">
+        <ul *ngIf="step.children" style="display: none">
           <li
             *ngFor="let step2 of step.children"
             [ngClass]="{ 'menu-item': step.children }"
