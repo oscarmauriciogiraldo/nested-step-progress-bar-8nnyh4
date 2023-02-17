@@ -26,10 +26,8 @@
 
         <!-- ####### NESTED STEP ######## -->
         <ul *ngIf="step.children" style="display: none">
-          <li
-            *ngFor="let step2 of step.children"
-            [ngClass]="{ 'menu-item': step.children }"
-          >
+          <li *ngFor="let step2 of step.children">
+            <!-- [ngClass]="{ 'menu-item': step.children }" -->
             <ng-container [ngSwitch]="step2.state">
               <i *ngSwitchCase="'incomplete'" class="pei pei-ring"></i>
               <i

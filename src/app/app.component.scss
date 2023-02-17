@@ -11,10 +11,11 @@
   .content-progress {
     display: flex;
     width: 100%;
-    flex-direction: column;
+    //flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px;
+    // background: yellow;
   }
   .content-view {
     display: flex;
